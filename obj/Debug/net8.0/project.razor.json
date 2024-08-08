@@ -19344,6 +19344,31 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Home\\Paises.cshtml",
+      "TargetPath": "Views\\Home\\Paises.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Home\\Deportes.cshtml",
+      "TargetPath": "Views\\Home\\Deportes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Home\\VerDetalleDeportista.cshtml",
+      "TargetPath": "Views\\Home\\VerDetalleDeportista.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Home\\DetallePais.cshtml",
+      "TargetPath": "Views\\Home\\DetallePais.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Home\\DetalleDeporte.cshtml",
+      "TargetPath": "Views\\Home\\DetalleDeporte.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -19361,6 +19386,11 @@
     {
       "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48115731\\Documents\\TP_JJOO\\Views\\Home\\AgregarDeportista.cshtml",
+      "TargetPath": "Views\\Home\\AgregarDeportista.cshtml",
       "FileKind": "mvc"
     }
   ],
