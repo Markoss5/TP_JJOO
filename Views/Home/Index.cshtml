@@ -1,8 +1,71 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+    <!-- Banner Section -->
+    <div class="banner text-center mb-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Olympic_flag.jpg" 
+             alt="JJOO Banner" 
+             class="img-fluid rounded"
+             style="max-height: 400px; width: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Site Description Section -->
+    <div class="site-description text-center">
+        <h1 class="mb-3">Bienvenidos a los Juegos Olímpicos</h1>
+        <p class="lead mb-4">
+            Este sitio web ofrece una visión general de los Juegos Olímpicos. Aquí puedes explorar la historia, 
+            los deportes, los países participantes y mucho más. También puedes agregar nuevos atletas y obtener 
+            información sobre los próximos eventos.
+        </p>
+        <p>
+            Los Juegos Olímpicos son el mayor evento deportivo internacional multidisciplinario en el que participan 
+            atletas de todo el mundo. Se celebran cada cuatro años, alternando entre los Juegos Olímpicos de Verano 
+            e Invierno, y son un símbolo de la amistad y la competencia pacífica entre naciones.
+        </p>
+    </div>
+
+    <!-- Optional Additional Content -->
+    <div class="additional-content mt-5">
+        <h2 class="text-center mb-3">Descubre más</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Olympic_rings_with_white_rims.svg/1024px-Olympic_rings_with_white_rims.svg.png" 
+                         class="card-img-top" 
+                         alt="Historia de los Juegos Olímpicos">
+                    <div class="card-body">
+                        <h5 class="card-title">Historia</h5>
+                        <p class="card-text">Conoce la historia de los Juegos Olímpicos desde la antigua Grecia hasta la actualidad.</p>
+                        <a href='@Url.Action("Historia", "Home")' class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Olympic_Village_Logo.svg/1024px-Olympic_Village_Logo.svg.png" 
+                         class="card-img-top" 
+                         alt="Deportes Olímpicos">
+                    <div class="card-body">
+                        <h5 class="card-title">Deportes</h5>
+                        <p class="card-text">Explora los deportes que se practican en los Juegos Olímpicos.</p>
+                        <a href='@Url.Action("Deportes", "Home")' class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/2018_Winter_Olympics_mascot.svg/1024px-2018_Winter_Olympics_mascot.svg.png" 
+                         class="card-img-top" 
+                         alt="Países Participantes">
+                    <div class="card-body">
+                        <h5 class="card-title">Países Participantes</h5>
+                        <p class="card-text">Descubre los países que participan en los Juegos Olímpicos.</p>
+                        <a href='@Url.Action("Paises", "Home")' class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
