@@ -38,3 +38,15 @@ C:\Users\48115731\TP_JJOO\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\Syste
 C:\Users\48115731\TP_JJOO\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\48115731\TP_JJOO\obj\Debug\net8.0\TP_JJOO.csproj.AssemblyReference.cache
 C:\Users\48115731\TP_JJOO\obj\Debug\net8.0\TP_JJOO.csproj.Up2Date
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.csproj.AssemblyReference.cache
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.AssemblyInfoInputs.cache
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.AssemblyInfo.cs
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.csproj.CoreCompileInputs.cache
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.RazorAssemblyInfo.cache
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.RazorAssemblyInfo.cs
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.sourcelink.json
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.dll
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\refint\TP_JJOO.dll
+C:\Users\devandroid\desktop\TP_JJOO\obj\Debug\net8.0\TP_JJOO.pdb
