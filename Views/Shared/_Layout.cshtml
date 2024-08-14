@@ -10,38 +10,36 @@
 </head>
 <body>
      <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/Logo.svg" alt="JJOO Logo" >
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- estan sin url action -->
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Historia">Historia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Deportes">Deportes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Paises">Países</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AgregarDeportista">Agregar Deportista</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Creditos">Créditos</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="@Url.Action(Index, Home)">
+            <img src="~/Logo.svg" alt="JJOO Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action(Historia, Home)">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action(Deportes, Home)">Deportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action(Paises, Home)">Países</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action(AgregarDeportista, Home)">Agregar Deportista</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action(Creditos, Home)">Créditos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
