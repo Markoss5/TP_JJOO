@@ -1,0 +1,70 @@
+/* index.css */
+
+/* Estilos para el banner principal */
+.banner {
+    height: 100vh; /* Ocupa toda la pantalla */
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que toda la imagen se vea sin recortes */
+}
+
+.banner-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para las secciones de deportes */
+.deporte-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    height: 60vh;
+}
+
+.deporte-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que toda la imagen se vea sin recortes */
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+}
+
+.deporte-item:hover {
+    transform: scale(1.02);
+}
+
+.deporte-text {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+}
+
+/* Estilos para textos */
+h1, h2, p {
+    color: #fff;
+}
+
+h1.display-4 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+p.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.deporte-text h2 {
+    margin-bottom: 10px;
+}
+
+.deporte-text p {
+    font-size: 1rem;
+    font-weight: 300;
+}
