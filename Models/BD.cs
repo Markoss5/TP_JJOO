@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 public static class BD{
-    private static string _connectionString = @"Server = localhost; DataBase = BaseDeDatos; Trusted_Connection = True;";
+    private static string _connectionString = @"Server = localhost; DataBase = JJOO; Trusted_Connection = True;";
     public static void AgregarDeportista(Deportista dep){
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
@@ -55,7 +55,7 @@ public static class BD{
         }
         return paises;
     }
-    public static List<Deportista> ListarDeportistasD(int idDeporte){
+    public static List<Deportista> ListarDeportistasXDep(int idDeporte){
         List<Deportista> deportistas;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
@@ -64,7 +64,7 @@ public static class BD{
         }
         return deportistas;
     }
-    public static List<Deportista> ListarDeportistasP(int idPais){
+    public static List<Deportista> ListarDeportistasXPais(int idPais){
         List<Deportista> deportistas;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
@@ -73,13 +73,22 @@ public static class BD{
         }
         return deportistas;
     }
-    public static List<Deporte> ListarDeportes(){
-        List<Deporte> deportistas;
+    public static List<Deportista> ListarDeportistas(){
+        List<Deportista> deportistas;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "EXEC sp_ver_Deportes";
-            deportistas = db.Query<Deporte>(sql, commandType: CommandType.StoredProcedure).ToList();
+            string sql = "sp_Listar_Deportistas";
+            deportistas = db.Query<Deportista>(sql, commandType: CommandType.StoredProcedure).ToList();
         }
         return deportistas;
+    }
+    public static List<Deporte> ListarDeportes(){
+        List<Deporte> deportes;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "sp_ver_Deportes";
+            deportes = db.Query<Deporte>(sql, commandType: CommandType.StoredProcedure).ToList();
+        }
+        return deportes;
     }
 }

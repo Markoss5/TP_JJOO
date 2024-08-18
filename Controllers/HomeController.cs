@@ -26,21 +26,21 @@ public class HomeController : Controller
 
     public IActionResult Paises()
     {
-        ViewBag.PaisesList = BD.ListarPaises();
+        ViewBag.PaisesLista = BD.ListarPaises();
         return View();
     }
 
     public IActionResult VerDetalleDeporte(int idDeporte)
     {
         ViewBag.Deporte = BD.VerInfoDeporte(idDeporte);
-        ViewBag.Deportistas = BD.ListarDeportistasD(idDeporte);
+        ViewBag.Deportistas = BD.ListarDeportistasXDep(idDeporte);
         return View("DetalleDeporte");
     }
 
     public IActionResult VerDetallePais(int idPais)
     {
-        ViewBag.Paies = BD.VerInfoPais(idPais);
-        ViewBag.Deportistas = BD.ListarDeportistasP(idPais);
+        ViewBag.Pais = BD.VerInfoPais(idPais);
+        ViewBag.Deportistas = BD.ListarDeportistasXPais(idPais);
         return View("DetallePais");
     }
 
@@ -70,6 +70,17 @@ public class HomeController : Controller
     }
 
     public IActionResult Creditos()
+    {
+        return View();
+    }
+
+    public IActionResult Deportistas()
+    {
+        ViewBag.DeportistasLista = BD.ListarDeportistas();
+        return View();
+    }
+
+    public IActionResult Historia()
     {
         return View();
     }
