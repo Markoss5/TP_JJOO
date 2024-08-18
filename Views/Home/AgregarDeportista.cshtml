@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Deportes - Juegos Olímpicos";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p>Musho texto</p>
+    <form class="row g-3 needs-validation" method="post" action='@Url.Action("GuardarDeportista","Home")'>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
+        </div>
+        <input class="text-center" type="date" required>
+        <div class="input-group">
+            <span class="input-group-text">Id del País y Deporte</span>
+            <input type="text" aria-label="Pais" class="form-control" required>
+            <input type="text" aria-label="Deporte" class="form-control" required>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+</body>
+</html>

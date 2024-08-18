@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Deportes - Juegos Olímpicos";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p>Musho texto</p>
+    <table class="table table-hover table-bordered caption-top">
+        <caption>Deportes</caption>
+        <tbody>
+            @foreach(Deporte dep in ViewBag.DeportesLista)
+            {
+                <tr>
+                    <th scope="row">@dep.IdDeporte</th>
+                    <td colspan="2">@dep.Foto</td>
+                    <td><a asp-area="" asp-controller="Home" asp-action="VerDetalleDeporte">@dep.Nombre</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

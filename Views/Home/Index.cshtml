@@ -3,56 +3,80 @@
 }
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Juegos Olímpicos</title>
-    <link rel="stylesheet" href="~/css/index.css" />
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Juegos Olímpicos</title>
+        <link rel="stylesheet" href="~/css/index.css" />
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <!-- Banner Principal -->
+            <div class="banner position-relative">
+                <img src="/imgs/ImagenLanding.png" class="img-fluid w-100 h-100" alt="Juegos Olímpicos de París">
+                <div class="banner-text position-absolute bottom-0 start-50 translate-middle-x text-center p-5">
+                    <h1 class="display-4 text-white fw-bold">Juegos Olímpicos de París</h1>
+                </div>
+            </div>
 
-<div class="container-fluid p-0">
-    <!-- Banner Principal -->
-    <div class="banner position-relative">
-        <img src="/imgs/ImagenLanding.png" class="img-fluid w-100 h-100" alt="Juegos Olímpicos de París">
-        <div class="banner-text position-absolute bottom-0 start-50 translate-middle-x text-center p-5">
-            <h1 class="display-4 text-white fw-bold">Juegos Olímpicos de París</h1>
-        </div>
-    </div>
+            <!-- Descripción del Sitio -->
+            <div class="site-description text-center my-5 px-3">    
+                <h1 class="fw-bold">Bienvenidos a los Juegos Olímpicos</h1>
+                <p class="lead">Explora la historia, los deportes, y todo lo que los Juegos Olímpicos tienen para ofrecer. ¡Mantente informado sobre los próximos eventos y las últimas noticias!</p>
+            </div>
 
-    <!-- Descripción del Sitio -->
-    <div class="site-description text-center my-5 px-3">    
-        <h1 class="fw-bold">Bienvenidos a los Juegos Olímpicos</h1>
-        <p class="lead">Explora la historia, los deportes, y todo lo que los Juegos Olímpicos tienen para ofrecer. ¡Mantente informado sobre los próximos eventos y las últimas noticias!</p>
-    </div>
+            <!-- Secciones de Deportes -->
+            <div class="deportes-section row mx-0">
+                <!-- Imagen con título en la parte inferior -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="deporte-item position-relative overflow-hidden">
+                        <img src="/imgs/Deportes.jpg" alt="Deporte 1" class="img-fluid w-100 h-100">
+                        <div class="deporte-text position-absolute bottom-0 start-50 translate-middle-x text-center p-3">
+                            <h2 class="text-white fw-bold">Deportes</h2>
+                            <p class="text-white">En esta página podrás encontrar todos los deportes que se realizan en los JJOO.</p>
+                            <a asp-area="" asp-controller="Home" asp-action="Deportes" class="btn btn-primary mt-3">Ver más</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Secciones de Deportes -->
-    <div class="deportes-section row mx-0">
-        <!-- Imagen con título en la parte inferior -->
-        <div class="col-lg-6 col-md-12 mb-4">
-            <div class="deporte-item position-relative overflow-hidden">
-                <img src="https://gstatic.olympics.com/s1/t_16-9_1280/f_auto/static/pastgames/results" alt="Deporte 1" class="img-fluid w-100 h-100">
-                <div class="deporte-text position-absolute bottom-0 start-50 translate-middle-x text-center p-3">
-                    <h2 class="text-white fw-bold">Deportes</h2>
-                    <p class="text-white">En esta página podrás encontrar todos los deportes que se realizan en los JJOO.</p>
-                    <a href="#" class="btn btn-primary mt-3">Ver más</a>
+                <!-- Imagen con título en la parte inferior -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="deporte-item position-relative overflow-hidden">
+                        <img src="/imgs/Deportistas.jpg" alt="Deporte 2" class="img-fluid w-100 h-100">
+                        <div class="deporte-text position-absolute bottom-0 start-50 translate-middle-x text-center p-3">
+                            <h2 class="text-white fw-bold">Deportistas</h2>
+                            <p class="text-white">Conoce a los mejores atletas que participaran en los Juegos Olímpicos .</p>
+                            <a asp-area="" asp-controller="Home" asp-action="Deportistas" class="btn btn-primary mt-3">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Secciones de Deportes -->
+            <div class="deportes-section row mx-0">
+                <!-- Imagen con título en la parte inferior -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="deporte-item position-relative overflow-hidden">
+                        <img src="/imgs/Paises.jpg" alt="Deporte 1" class="img-fluid w-100 h-100">
+                        <div class="deporte-text position-absolute bottom-0 start-50 translate-middle-x text-center p-3">
+                            <h2 class="text-white fw-bold">Países</h2>
+                            <p class="text-white">Mira todos los paises que participaran en las competencias.</p>
+                            <a asp-area="" asp-controller="Home" asp-action="Paises" class="btn btn-primary mt-3">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen con título en la parte inferior -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="deporte-item position-relative overflow-hidden">
+                        <img src="/imgs/Historia.jpg" alt="Deporte 2" class="img-fluid w-100 h-100">
+                        <div class="deporte-text position-absolute bottom-0 start-50 translate-middle-x text-center p-3">
+                            <h2 class="text-white fw-bold">Historia</h2>
+                            <p class="text-white">Un recorrido de la larga historia que llevo a la creacion de los Juegos Olímpicos.</p>
+                            <a asp-area="" asp-controller="Home" asp-action="Historia" class="btn btn-primary mt-3">Ver más</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Imagen con título en la parte inferior -->
-        <div class="col-lg-6 col-md-12 mb-4">
-            <div class="deporte-item position-relative overflow-hidden">
-                <img src="your-image-url-deporte-2.jpg" alt="Deporte 2" class="img-fluid w-100 h-100">
-                <div class="deporte-text position-absolute bottom-0 start-50 translate-middle-x text-center p-3">
-                    <h2 class="text-white fw-bold">Deporte 2</h2>
-                    <p class="text-white">Descripción breve sobre este deporte. Explora los momentos más emocionantes y los mejores atletas.</p>
-                    <a href="#" class="btn btn-primary mt-3">Ver más</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-</body>
+    </body>
 </html>
