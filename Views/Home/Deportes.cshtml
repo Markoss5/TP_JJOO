@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>Musho texto</p>
+    <p class="text-center">Aqui en los Juegos Olímpicos ofrecemos una variedad de deportes para competir, los cuales demuestran las capacidades fisicas de cada participante en ellos.</p>
     <table class="table table-hover table-bordered caption-top">
         <caption>Deportes</caption>
         <tbody>
@@ -16,8 +16,8 @@
             {
                 <tr>
                     <th scope="row">@dep.IdDeporte</th>
-                    <td colspan="2">@dep.Foto</td>
-                    <td><a asp-area="" asp-controller="Home" asp-action="VerDetalleDeporte">@dep.Nombre</a></td>
+                    <td colspan="2"><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@dep.Foto</a></td>
+                    <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@dep.Nombre</a></td>
                 </tr>
             }
         </tbody>

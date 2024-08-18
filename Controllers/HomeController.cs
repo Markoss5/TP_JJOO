@@ -77,6 +77,8 @@ public class HomeController : Controller
     public IActionResult Deportistas()
     {
         ViewBag.DeportistasLista = BD.ListarDeportistas();
+        ViewBag.DeportesLista = BD.ListarDeportes();
+        ViewBag.PaisesLista = BD.ListarPaises();
         return View();
     }
 

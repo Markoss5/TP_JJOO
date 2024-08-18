@@ -9,6 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>Musho Texto</p>
+    <p>Aqui encontraras a los famosos y nuevos deportistas que competiran en los Juegos Olímpicos</p>
+    <table class="table table-hover table-bordered caption-top">
+        <caption>Deportistas</caption>
+        <tbody>
+            @foreach(Deportista dep in ViewBag.DeportistasLista)
+            {
+                <tr>
+                    <th scope="row">@dep.IdDeportista</th>
+                    <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
+                    <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista>@dep.Nombre @dep.Apellido</a></td>
+                    <td>@dep.FechaNacimiento</td>
+                    <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista.Nombre[dep.IdDeporte]</a></td>
+                    <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista.Nombre[dep.IdPais]</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>

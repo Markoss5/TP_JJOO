@@ -16,8 +16,8 @@
             {
                 <tr>
                     <th scope="row">@pais.IdPais</th>
-                    <td><img src="@pais.Bandera" alt="Bandera @pais.Nombre"></td>
-                    <td><a asp-area="" asp-controller="Home" asp-action="VerDetallePais">@pais.Nombre</a></td>
+                    <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais><img src="@pais.Bandera" alt="Bandera @pais.Nombre"></a></td>
+                    <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais>@pais.Nombre</a></td>
                     <td>@pais.FechaFundacion</td>
                 </tr>
             }
