@@ -12,6 +12,6 @@
     <img src="@ViewBag.Deportista.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deportista.Nombre">
     <h2 class="text-center">@ViewBag.Deportista.Nombre @ViewBag.Deportista.Apellido</h2>
     <p class="text-center">Participa en <a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@ViewBag.Deportista.IdDeporte>@ViewBag.Deporte[ViewBag.Deportista.IdDeporte]</a> representando a <a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@ViewBag.Deportista.IdPais>@ViewBag.Pais[ViewBag.Deportista.IdPais]</a></p>
-    <!--Descripcion?-->
+    <p class="text-center">@ViewBag.Deportista.Logros</p>
 </body>
 </html>
