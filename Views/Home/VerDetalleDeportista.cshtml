@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "@ViewBag.Deportista - Juegos Olímpicos";
+    ViewData["Title"] = ViewBag.Deportista + " - Juegos Olímpicos";
 }
 
 <!DOCTYPE html>
@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>Musho Texto</p>
+    <img src="@ViewBag.Deportista.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deportista.Nombre">
+    <h2 class="text-center">@ViewBag.Deportista.Nombre @ViewBag.Deportista.Apellido</h2>
+    <p class="text-center">Participa en <a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@ViewBag.Deportista.IdDeporte>@ViewBag.Deporte[ViewBag.Deportista.IdDeporte]</a> representando a <a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@ViewBag.Deportista.IdPais>@ViewBag.Pais[ViewBag.Deportista.IdPais]</a></p>
+    <!--Descripcion?-->
 </body>
 </html>

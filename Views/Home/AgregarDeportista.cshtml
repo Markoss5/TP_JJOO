@@ -12,15 +12,21 @@
     <p>Musho texto</p>
     <form class="row g-3 needs-validation" method="post" action='@Url.Action("GuardarDeportista","Home")'>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
+            <input type="text" name="Nombre" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+            <input type="text" name="Apellido" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
         </div>
-        <input class="text-center" type="date" required>
-        <div class="input-group">
-            <span class="input-group-text">Id del País y Deporte</span>
-            <input type="text" aria-label="Pais" class="form-control" required>
-            <input type="text" aria-label="Deporte" class="form-control" required>
-        </div>
+        <input class="text-center" name="FechaNacimiento" type="date" required>
+        <input type="url" name="Foto" placeholder="Ingresa la URL de una Imagen" required>
+        <select name="IdPais" class="form-select form-select-lg mb-3" aria-label="Large select example" required>
+            @foreach(Pais pais in ViewBag.PaisesLista){
+                <option value="@pais.IdPais">@pais.Nombre</option>
+            }
+        </select>
+        <select name="IdDeporte" class="form-select form-select-lg mb-3" aria-label="Large select example" required>
+            @foreach(Deporte dep in ViewBag.DeportesLista){
+                <option value="@dep.IdDeporte">@dep.Nombre</option>
+            }
+        </select>
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit form</button>
         </div>

@@ -34,6 +34,7 @@ public class HomeController : Controller
     {
         ViewBag.Deporte = BD.VerInfoDeporte(idDeporte);
         ViewBag.Deportistas = BD.ListarDeportistasXDep(idDeporte);
+        ViewBag.PaisesLista = BD.ListarPaises();
         return View("DetalleDeporte");
     }
 
@@ -41,19 +42,22 @@ public class HomeController : Controller
     {
         ViewBag.Pais = BD.VerInfoPais(idPais);
         ViewBag.Deportistas = BD.ListarDeportistasXPais(idPais);
+        ViewBag.DeportesLista = BD.ListarDeportes();
         return View("DetallePais");
     }
 
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.Deportista = BD.VerInfoDeportista(idDeportista);
+        ViewBag.PaisesLista = BD.ListarPaises();
+        ViewBag.DeportesLista = BD.ListarDeportes();
         return View("DetalleDeportista");
     }
 
     public IActionResult AgregarDeportista()
     {
-        ViewBag.PaisesList = BD.ListarPaises();
-        ViewBag.PaisesList = BD.ListarDeportes();
+        ViewBag.PaisesLista = BD.ListarPaises();
+        ViewBag.DeportesLista = BD.ListarDeportes();
         return View();
     }
 
