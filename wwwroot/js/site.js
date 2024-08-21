@@ -5,7 +5,13 @@
 const html = document.querySelector("#tema");
 const htmlColorMode = document.querySelector(".site-theme");
 html.setAttribute("data-bs-theme", localStorage.getItem("tema"));
-document.getElementById("themeSelector").src= localStorage.getItem("img");
+
+if(!localStorage.getItem("img")){
+    document.getElementById("themeSelector").src = "/imgs/luna.png"
+}
+else{
+    document.getElementById("themeSelector").src= localStorage.getItem("img");
+}
 
 htmlColorMode.addEventListener("click", () => {
     if(html.getAttribute("data-bs-theme") === "dark"){

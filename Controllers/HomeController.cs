@@ -78,11 +78,12 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Deportistas()
+    public IActionResult Deportistas(string searchQuery = "")
     {
         ViewBag.DeportistasLista = BD.ListarDeportistas();
         ViewBag.DeportesLista = BD.ListarDeportes();
         ViewBag.PaisesLista = BD.ListarPaises();
+        ViewBag.searchQuery = searchQuery;
         return View();
     }
 
