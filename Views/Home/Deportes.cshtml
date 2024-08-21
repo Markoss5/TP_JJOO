@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/deportes.css">
 </head>
 <body>
     <p class="text-center">Aqui en los Juegos Olímpicos ofrecemos una variedad de deportes para competir, los cuales demuestran las capacidades fisicas de cada participante en ellos.</p>
@@ -16,8 +17,8 @@
             {
                 <tr>
                     <th scope="row">@dep.IdDeporte</th>
-                    <td colspan="2"><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@dep.Foto</a></td>
-                    <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@dep.Nombre</a></td>
+                    <td colspan="2"><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte><img src="@dep.Foto"></a></td>
+                    <td>@dep.Nombre</td>
                 </tr>
             }
         </tbody>

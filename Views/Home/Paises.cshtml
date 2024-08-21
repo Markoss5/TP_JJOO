@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Paises.css">
 </head>
 <body>
     <p>Musho texto</p>
@@ -17,8 +18,8 @@
                 <tr>
                     <th scope="row">@pais.IdPais</th>
                     <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais><img src="@pais.Bandera" alt="Bandera @pais.Nombre"></a></td>
-                    <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais>@pais.Nombre</a></td>
-                    <td>@pais.FechaFundacion</td>
+                    <td>@pais.Nombre</td>
+                    <td>@pais.FechaFundacion.ToShortDateString()</td>
                 </tr>
             }
         </tbody>
