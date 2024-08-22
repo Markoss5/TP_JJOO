@@ -60,7 +60,7 @@ public static class BD{
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "sp_ver_deportistas_segun_deporte";
-            deportistas = db.Query<Deportista>(sql, new { IdDeporte = idDeporte }, commandType: CommandType.StoredProcedure).ToList();
+            deportistas = db.Query<Deportista>(sql, new { Id_Deporte = idDeporte }, commandType: CommandType.StoredProcedure).ToList();
         }
         return deportistas;
     }

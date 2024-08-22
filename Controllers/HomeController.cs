@@ -73,11 +73,6 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult Creditos()
-    {
-        return View();
-    }
-
     public IActionResult Deportistas(string searchQuery = "")
     {
         ViewBag.DeportistasLista = BD.ListarDeportistas();
