@@ -2,13 +2,7 @@
     ViewData["Title"] = "Deportistas - Juegos Olímpicos";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+
     <p class="text-center">Aqui encontraras a los famosos y nuevos deportistas que competiran en los Juegos Olímpicos</p>
     <form class="d-flex" role="search" method="post" action='@Url.Action("Deportistas","Home")'>
         <input class="form-control me-2" type="search" placeholder="Buscar Jugadores" aria-label="Search" name="searchQuery">
@@ -25,27 +19,25 @@
                         <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
                         <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista>@dep.Nombre @dep.Apellido</a></td>
                         <td>@dep.FechaNacimiento</td>
-                        <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista.Nombre[dep.IdDeporte]</a></td>
-                        <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista.Nombre[dep.IdPais]</a></td>
+                        <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista[dep.IdDeporte].Nombre</a></td>
+                        <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista[dep.IdPais].Nombre</a></td>
                     </tr>
                 }
             }
             else{
                 foreach(Deportista dep in ViewBag.DeportistasLista)
                 {
-                    if(dep.Nombre == ViewBag.searchQuery){
+                    if(dep.Nombre.ToLower().Contains(ViewBag.searchQuery.ToLower())){
                         <tr>
                             <th scope="row">@dep.IdDeportista</th>
                             <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
                             <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista>@dep.Nombre @dep.Apellido</a></td>
                             <td>@dep.FechaNacimiento</td>
-                            <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista.Nombre[dep.IdDeporte]</a></td>
-                            <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista.Nombre[dep.IdPais]</a></td>
+                            <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista[dep.IdDeporte].Nombre</a></td>
+                            <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista[dep.IdPais].Nombre</a></td>
                         </tr>
                     }
                 }
             }
         </tbody>
     </table>
-</body>
-</html>

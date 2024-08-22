@@ -18,15 +18,17 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Deportes()
+    public IActionResult Deportes(string searchQuery = "")
     {
         ViewBag.DeportesLista = BD.ListarDeportes();
+        ViewBag.searchQuery = searchQuery;
         return View();
     }
 
-    public IActionResult Paises()
+    public IActionResult Paises(string searchQuery = "")
     {
         ViewBag.PaisesLista = BD.ListarPaises();
+        ViewBag.searchQuery = searchQuery;
         return View();
     }
 

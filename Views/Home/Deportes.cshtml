@@ -10,16 +10,34 @@
 </head>
 <body>
     <p class="text-center">Aqui en los Juegos Olímpicos ofrecemos una variedad de deportes para competir, los cuales demuestran las capacidades fisicas de cada participante en ellos.</p>
+    <form class="d-flex" role="search" method="post" action='@Url.Action("Deportes","Home")'>
+        <input class="form-control me-2" type="search" placeholder="Buscar Deportes" aria-label="Search" name="searchQuery">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
     <table class="table table-hover table-bordered caption-top">
         <caption>Deportes</caption>
         <tbody>
-            @foreach(Deporte dep in ViewBag.DeportesLista)
-            {
-                <tr>
-                    <th scope="row">@dep.IdDeporte</th>
-                    <td colspan="2"><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte><img src="@dep.Foto"></a></td>
-                    <td>@dep.Nombre</td>
-                </tr>
+            @if(String.IsNullOrEmpty(ViewBag.searchQuery)){
+                foreach(Deporte dep in ViewBag.DeportesLista)
+                {
+                    <tr>
+                        <th scope="row">@dep.IdDeporte</th>
+                        <td colspan="2"><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte><img src="@dep.Foto"></a></td>
+                        <td>@dep.Nombre</td>
+                    </tr>
+                }
+            }
+            else{
+                foreach(Deporte dep in ViewBag.DeportesLista)
+                {
+                    if(dep.Nombre.ToLower().Contains(ViewBag.searchQuery.ToLower())){
+                        <tr>
+                            <th scope="row">@dep.IdDeporte</th>
+                            <td colspan="2"><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte><img src="@dep.Foto"></a></td>
+                            <td>@dep.Nombre</td>
+                        </tr>
+                    }
+                }
             }
         </tbody>
     </table>

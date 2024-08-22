@@ -12,6 +12,7 @@
     <img src="@ViewBag.Pais.Bandera" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Pais.Nombre">
     <h1 class="text-center">@ViewBag.Pais.Nombre</h1>
     <h3 class="text-center">Fundación el @ViewBag.Pais.FechaFundacion.ToShortDateString()</h3>
+    <p class="text-center">Numero de Id: @ViewBag.Pais.IdPais</p>
     <div class="row row-cols-1 row-cols-md-2 g-4"></div>
         @foreach(Deportista dep in ViewBag.Deportistas)
         {

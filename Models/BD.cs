@@ -9,7 +9,7 @@ public static class BD{
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "sp_agregar_deportista";
-            db.Execute(sql, new {IdDeportista = dep.IdDeportista, Apellido = dep.Apellido, Nombre = dep.Nombre, FechaNacimiento = dep.FechaNacimiento, Foto = dep.Foto, IdPais = dep.IdPais, IdDeporte = dep.IdDeporte}, commandType: CommandType.StoredProcedure);
+            db.Execute(sql, new {Apellido = dep.Apellido, Nombre = dep.Nombre, FechaNacimiento = dep.FechaNacimiento, Foto = dep.Foto, IdPais = dep.IdPais, IdDeporte = dep.IdDeporte, Logros = dep.Logros}, commandType: CommandType.StoredProcedure);
         }
     }
     public static void EliminarDeportista(int idDeportista){

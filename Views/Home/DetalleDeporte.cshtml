@@ -7,22 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/detalleDeporte.css">
 </head>
 <body>
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="@ViewBag.Deporte.Foto" class="img-fluid rounded-start" alt="Foto de @ViewBag.Deporte.Nombre">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">@ViewBag.Deporte.Nombre</h5>
-                    <p class="card-text">@ViewBag.Deporte.Descripcion</p>
-                    <p class="card-text"><small class="text-body-secondary">Numero de Id: @ViewBag.Deporte.IdDeporte</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <img src="@ViewBag.Deporte.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deporte.Nombre">
+    <h5 class="card-title">@ViewBag.Deporte.Nombre</h5>
+    <p class="card-text">@ViewBag.Deporte.Descripcion</p>
+    <p class="card-text"><small class="text-body-secondary">Numero de Id: @ViewBag.Deporte.IdDeporte</small></p>
     <div class="row row-cols-1 row-cols-md-2 g-4"></div>
         @foreach(Deportista dep in ViewBag.Deportistas)
         {

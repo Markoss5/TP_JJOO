@@ -17,6 +17,7 @@
         </div>
         <input class="text-center" name="FechaNacimiento" type="date" required>
         <input type="url" name="Foto" placeholder="Ingresa la URL de una Imagen" required>
+        <input type="text" name="Logros" class="form-control" placeholder="Logros o aspectos interesantes" aria-label="Nombre" required>
         <select name="IdPais" class="form-select form-select-lg mb-3" aria-label="Large select example" required>
             @foreach(Pais pais in ViewBag.PaisesLista){
                 <option value="@pais.IdPais">@pais.Nombre</option>

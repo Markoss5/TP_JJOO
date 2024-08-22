@@ -9,18 +9,37 @@
     <link rel="stylesheet" href="/css/Paises.css">
 </head>
 <body>
-    <p>Musho texto</p>
+    <p class="text-center">Aqui encontraras a los varios paises que participan de estos juegos</p>
+    <form class="d-flex" role="search" method="post" action='@Url.Action("Paises","Home")'>
+        <input class="form-control me-2" type="search" placeholder="Buscar Paises" aria-label="Search" name="searchQuery">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
     <table class="table table-hover table-bordered caption-top">
         <caption>Países</caption>
         <tbody>
-            @foreach(Pais pais in ViewBag.PaisesLista)
-            {
-                <tr>
-                    <th scope="row">@pais.IdPais</th>
-                    <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais><img src="@pais.Bandera" alt="Bandera @pais.Nombre"></a></td>
-                    <td>@pais.Nombre</td>
-                    <td>@pais.FechaFundacion.ToShortDateString()</td>
-                </tr>
+            @if(String.IsNullOrEmpty(ViewBag.searchQuery)){
+                foreach(Pais pais in ViewBag.PaisesLista)
+                {
+                    <tr>
+                        <th scope="row">@pais.IdPais</th>
+                        <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais><img src="@pais.Bandera" alt="Bandera @pais.Nombre"></a></td>
+                        <td>@pais.Nombre</td>
+                        <td>@pais.FechaFundacion.ToShortDateString()</td>
+                    </tr>
+                }
+            }
+            else{
+                foreach(Pais pais in ViewBag.PaisesLista)
+                {
+                    if(pais.Nombre.ToLower().Contains(ViewBag.searchQuery.ToLower())){
+                        <tr>
+                            <th scope="row">@pais.IdPais</th>
+                            <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@pais.IdPais><img src="@pais.Bandera" alt="Bandera @pais.Nombre"></a></td>
+                            <td>@pais.Nombre</td>
+                            <td>@pais.FechaFundacion.ToShortDateString()</td>
+                        </tr>
+                    }
+                }
             }
         </tbody>
     </table>
