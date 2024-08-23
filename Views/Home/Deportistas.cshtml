@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Deportistas - Juegos Olímpicos";
 }
-
+    <link rel="stylesheet" href="/css/deportistas.css">
 
     <p class="text-center">Aqui encontraras a los famosos y nuevos deportistas que competiran en los Juegos Olímpicos</p>
     <form class="d-flex" role="search" method="post" action='@Url.Action("Deportistas","Home")'>
@@ -16,23 +16,23 @@
                 {
                     <tr>
                         <th scope="row">@dep.IdDeportista</th>
-                        <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
-                        <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista>@dep.Nombre @dep.Apellido</a></td>
-                        <td>@dep.FechaNacimiento</td>
-                        <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista[dep.IdDeporte].Nombre</a></td>
-                        <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista[dep.IdPais].Nombre</a></td>
+                        <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista - 1><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
+                        <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista - 1>@dep.Nombre @dep.Apellido</a></td>
+                        <td>@dep.FechaNacimiento.ToShortDateString()</td>
+                        <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte - 1>@ViewBag.DeportesLista[dep.IdDeporte - 1].Nombre</a></td>
+                        <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais - 1>@ViewBag.PaisesLista[dep.IdPais - 1].Nombre</a></td>
                     </tr>
                 }
             }
             else{
                 foreach(Deportista dep in ViewBag.DeportistasLista)
                 {
-                    if(dep.Nombre.ToLower().Contains(ViewBag.searchQuery.ToLower())){
+                    if(dep.Nombre.ToLower().Contains(ViewBag.searchQuery.ToLower()) || dep.Apellido.ToLower().Contains(ViewBag.searchQuery.ToLower())){
                         <tr>
                             <th scope="row">@dep.IdDeportista</th>
-                            <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
-                            <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista>@dep.Nombre @dep.Apellido</a></td>
-                            <td>@dep.FechaNacimiento</td>
+                            <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista - 1><img src="@dep.Foto" alt="@dep.Nombre Foto"></a></td>
+                            <td><a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista - 1>@dep.Nombre @dep.Apellido</a></td>
+                            <td>@dep.FechaNacimiento.ToShortDateString()</td>
                             <td><a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@dep.IdDeporte>@ViewBag.DeportesLista[dep.IdDeporte].Nombre</a></td>
                             <td><a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista[dep.IdPais].Nombre</a></td>
                         </tr>

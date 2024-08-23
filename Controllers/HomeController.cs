@@ -53,7 +53,7 @@ public class HomeController : Controller
         ViewBag.Deportista = BD.VerInfoDeportista(idDeportista);
         ViewBag.PaisesLista = BD.ListarPaises();
         ViewBag.DeportesLista = BD.ListarDeportes();
-        return View("DetalleDeportista");
+        return View();
     }
 
     public IActionResult AgregarDeportista()

@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="/css/detalleDeporte.css">
 </head>
 <body>
-    <img src="@ViewBag.Deporte.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deporte.Nombre">
-    <h5 class="card-title">@ViewBag.Deporte.Nombre</h5>
-    <p class="card-text">@ViewBag.Deporte.Descripcion</p>
-    <p class="card-text"><small class="text-body-secondary">Numero de Id: @ViewBag.Deporte.IdDeporte</small></p>
+    <section>
+        <img src="@ViewBag.Deporte.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deporte.Nombre">
+        <h1 class="text-center">@ViewBag.Deporte.Nombre</h1>
+        <p class="text-center">@ViewBag.Deporte.Descripcion</p>
+        <p class="text-center"><small class="text-body-secondary">Numero de Id: @ViewBag.Deporte.IdDeporte</small></p>
+    </section>
     <div class="row row-cols-1 row-cols-md-2 g-4"></div>
         @foreach(Deportista dep in ViewBag.Deportistas)
         {
@@ -22,7 +24,7 @@
                     <a asp-controller="Home" asp-action="VerDetalleDeportista" asp-route-idDeportista=@dep.IdDeportista><img src="@dep.Foto" class="card-img-top" alt="Foto de @dep.Nombre"></a>
                     <div class="card-body">
                         <h5 class="card-title">@dep.Nombre @dep.Apellido</h5>
-                        <p class="card-text">Nacido el @dep.FechaNacimiento en <a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista[dep.IdPais]</a></p>
+                        <p class="card-text">Nacido el @dep.FechaNacimiento.ToShortDateString() en <a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@dep.IdPais>@ViewBag.PaisesLista[dep.IdPais - 1].Nombre</a></p>
                         <p class="card-text"><small class="text-body-secondary">Numero de Id: @dep.IdDeportista</small></p>
                     </div>
                 </div>

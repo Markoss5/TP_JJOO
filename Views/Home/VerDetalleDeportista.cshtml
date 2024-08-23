@@ -7,11 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/verDeportista.css">
 </head>
 <body>
-    <img src="@ViewBag.Deportista.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deportista.Nombre">
-    <h2 class="text-center">@ViewBag.Deportista.Nombre @ViewBag.Deportista.Apellido</h2>
-    <p class="text-center">Participa en <a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@ViewBag.Deportista.IdDeporte>@ViewBag.Deporte[ViewBag.Deportista.IdDeporte]</a> representando a <a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@ViewBag.Deportista.IdPais>@ViewBag.Pais[ViewBag.Deportista.IdPais]</a></p>
-    <p class="text-center">@ViewBag.Deportista.Logros</p>
+    <section>
+        <img src="@ViewBag.Deportista.Foto" class="rounded mx-auto d-block" alt="Foto de @ViewBag.Deportista.Nombre">
+        <h2 class="text-center">@ViewBag.Deportista.Nombre @ViewBag.Deportista.Apellido</h2>
+        <p class="text-center">Participa en <a asp-controller="Home" asp-action="VerDetalleDeporte" asp-route-idDeporte=@ViewBag.Deportista.IdDeporte>@ViewBag.DeportesLista[ViewBag.Deportista.IdDeporte - 1].Nombre</a> representando a <a asp-controller="Home" asp-action="VerDetallePais" asp-route-idPais=@ViewBag.Deportista.IdPais>@ViewBag.PaisesLista[ViewBag.Deportista.IdPais - 1].Nombre</a></p>
+        <p class="text-center">@ViewBag.Deportista.Logros</p>
+    </section>
 </body>
 </html>
